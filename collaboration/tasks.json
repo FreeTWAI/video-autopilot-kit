@@ -1,13 +1,13 @@
 {
   "format": "freedom.github-task-index/v1",
-  "repository": "FreeTWAI-AI/video-autopilot-kit",
+  "repository": "FreeTWAI/video-autopilot-kit",
   "tasks_system_of_record": "github_issues",
   "note": "This is an entry index, not a status or assignment database. Read each Issue for current scope, assignees and discussion.",
   "tasks": [
     {
       "number": 1,
       "title": "建立可重現的剪輯測試素材",
-      "url": "https://github.com/FreeTWAI-AI/video-autopilot-kit/issues/1",
+      "url": "https://github.com/FreeTWAI/video-autopilot-kit/issues/1",
       "roles": [
         "testing",
         "development"
@@ -16,7 +16,7 @@
     {
       "number": 2,
       "title": "加入共創者的最小檢查指令與 JSON 結果",
-      "url": "https://github.com/FreeTWAI-AI/video-autopilot-kit/issues/2",
+      "url": "https://github.com/FreeTWAI/video-autopilot-kit/issues/2",
       "roles": [
         "development",
         "testing"
@@ -25,7 +25,7 @@
     {
       "number": 3,
       "title": "做出字幕與配樂擴充的小型可跑範例",
-      "url": "https://github.com/FreeTWAI-AI/video-autopilot-kit/issues/3",
+      "url": "https://github.com/FreeTWAI/video-autopilot-kit/issues/3",
       "roles": [
         "development",
         "design",
@@ -35,7 +35,7 @@
     {
       "number": 4,
       "title": "整理第一輪共同推廣與需求回饋",
-      "url": "https://github.com/FreeTWAI-AI/video-autopilot-kit/issues/4",
+      "url": "https://github.com/FreeTWAI/video-autopilot-kit/issues/4",
       "roles": [
         "marketing",
         "sales",
@@ -45,7 +45,7 @@
     {
       "number": 5,
       "title": "修復 Pillow 已知依賴告警並驗證影音相容性",
-      "url": "https://github.com/FreeTWAI-AI/video-autopilot-kit/issues/5",
+      "url": "https://github.com/FreeTWAI/video-autopilot-kit/issues/5",
       "roles": [
         "security",
         "development",
