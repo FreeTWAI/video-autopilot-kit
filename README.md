@@ -9,11 +9,11 @@
 
 工坊 fork 尚未因此完成新的剪輯功能、啟用自動發布或取得真人收入；上游 release 的聲明不自動成為此 fork 的驗證。
 
-工坊 Fork：上游產品／授權來源為 [Hao0321/video-autopilot-kit](https://github.com/Hao0321/video-autopilot-kit)；本次協作的 Issue／PR 送到 **FreeTWAI-AI/video-autopilot-kit**，不是自動送往上游。
+工坊 Fork：上游產品／授權來源為 [Hao0321/video-autopilot-kit](https://github.com/Hao0321/video-autopilot-kit)；本次協作的 Issue／PR 送到 **FreeTWAI/video-autopilot-kit**，不是自動送往上游。
 
-程式／內容入口：[src/](src/)、[scripts/](scripts/)、[examples/](examples/)、[templates/](templates/)、[TASKS.md](TASKS.md)。協作先讀 [CONTRIBUTING.md](CONTRIBUTING.md)，讓 Agent 讀 [AGENTS.md](AGENTS.md)；從[本倉 Issues](https://github.com/FreeTWAI-AI/video-autopilot-kit/issues)認領、[查看既有 PR](https://github.com/FreeTWAI-AI/video-autopilot-kit/pulls)避免重工。
+程式／內容入口：[src/](src/)、[scripts/](scripts/)、[examples/](examples/)、[templates/](templates/)、[TASKS.md](TASKS.md)。協作先讀 [CONTRIBUTING.md](CONTRIBUTING.md)，讓 Agent 讀 [AGENTS.md](AGENTS.md)；從[本倉 Issues](https://github.com/FreeTWAI/video-autopilot-kit/issues)認領、[查看既有 PR](https://github.com/FreeTWAI/video-autopilot-kit/pulls)避免重工。
 
-保留 Editkin v4 runtime 與上游署名。私人 profiles、config.py、原始媒體與後台數據留在使用者本機。中央只索引公開 repo／Issue／merged PR，不接收影片工作資料。 跨 repo 的協定由[中央平台](https://github.com/FreeTWAI-AI/freedom-platform)維護。
+保留 Editkin v4 runtime 與上游署名。私人 profiles、config.py、原始媒體與後台數據留在使用者本機。中央只索引公開 repo／Issue／merged PR，不接收影片工作資料。 跨 repo 的協定由[中央平台](https://github.com/FreeTWAI/freedom-platform)維護。
 <!-- freedom-repository-guide:end -->
 
 ## 自由工坊共創入口

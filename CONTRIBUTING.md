@@ -4,11 +4,11 @@
 
 ## 一次完成一張任務
 
-1. 從 [GitHub Issues](https://github.com/FreeTWAI-AI/video-autopilot-kit/issues) 選一張，閱讀完成條件與討論。
+1. 從 [GitHub Issues](https://github.com/FreeTWAI/video-autopilot-kit/issues) 選一張，閱讀完成條件與討論。
 2. 留言說明「我能做什麼／這次範圍／需要誰協助」。維護者確認後再認領，沒有人被平台自動派單。
 3. 用自己的 GitHub 身分 Fork，或使用已有 Fork 加上工坊 remote；從工坊的最新 main 開工作分支。不要把密碼或 token 貼到 Issue。
 4. 讓 Agent 讀 AGENTS.md 和 Issue；小幅實作、自己看差異，執行相關檢查。
-5. 提交到 **FreeTWAI-AI/video-autopilot-kit** 的 PR，描述 `Closes #任務編號`、測試與限制；請維護者 review。
+5. 提交到 **FreeTWAI/video-autopilot-kit** 的 PR，描述 `Closes #任務編號`、測試與限制；請維護者 review。
 
 ## 可使用的既有檢查
 
@@ -33,7 +33,7 @@ GitHub 的作者、review、PR 和合併 SHA 是可追溯紀錄；協作者依�
 
 媒體自動化公會的剪輯框架與第一個公開共創試點。 保留 Hao 的 Editkin v4 流程、素材／QA 工具、範例，以及工坊 Issue／PR 任務入口。
 
-先看[本倉 Issues](https://github.com/FreeTWAI-AI/video-autopilot-kit/issues)與[現有 PR](https://github.com/FreeTWAI-AI/video-autopilot-kit/pulls)。提出問題、這一輪範圍、完成條件與可投入時間，在 Issue 認領並協調重疊工作；維護者已直接派工時不必重複等待，將約定連回交接即可。使用自己的 fork／分支，PR 送到 **FreeTWAI-AI/video-autopilot-kit:main**。
+先看[本倉 Issues](https://github.com/FreeTWAI/video-autopilot-kit/issues)與[現有 PR](https://github.com/FreeTWAI/video-autopilot-kit/pulls)。提出問題、這一輪範圍、完成條件與可投入時間，在 Issue 認領並協調重疊工作；維護者已直接派工時不必重複等待，將約定連回交接即可。使用自己的 fork／分支，PR 送到 **FreeTWAI/video-autopilot-kit:main**。
 
 交給 Agent 前先讓它讀 [AGENTS.md](AGENTS.md)。PR 寫明變更用途、使用者可見結果、驗證命令、限制與原 Issue；附上可公開的合成案例或重現方式。Issue／PR 是程式協作的記錄，平台名片與公會身分不取代 repo 維護者的審查。
 
@@ -53,7 +53,7 @@ python3 examples/04_shorts_gate.py
 
 ### 署名與上游
 
-工坊 Fork：上游產品／授權來源為 [Hao0321/video-autopilot-kit](https://github.com/Hao0321/video-autopilot-kit)；本次協作的 Issue／PR 送到 **FreeTWAI-AI/video-autopilot-kit**，不是自動送往上游。 保留原作者與授權檔，另列真正完成文件、測試、設計、程式或協作的人。使用 AI 時如實交代協作範圍；只有實際 GitHub PR／review／合併紀錄可以作為對應貢獻證據，不能靠自填帳號推定。
+工坊 Fork：上游產品／授權來源為 [Hao0321/video-autopilot-kit](https://github.com/Hao0321/video-autopilot-kit)；本次協作的 Issue／PR 送到 **FreeTWAI/video-autopilot-kit**，不是自動送往上游。 保留原作者與授權檔，另列真正完成文件、測試、設計、程式或協作的人。使用 AI 時如實交代協作範圍；只有實際 GitHub PR／review／合併紀錄可以作為對應貢獻證據，不能靠自填帳號推定。
 
 自願貢獻不保證案源、XP、收益或雇用。若產生付費合作，由當事人另定條款與 Seller 外部收款；平台不代收。秘密、客戶資料、真實交易單據與未授權素材不進公開 Issue／PR。
 <!-- freedom-repository-guide:end -->
