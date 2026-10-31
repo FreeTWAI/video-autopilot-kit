@@ -294,6 +294,8 @@ class _MediaReviewHandler(BaseHTTPRequestHandler):
     def _send_bytes(self, payload: bytes, content_type: str, *, status: int = 200) -> None:
         self.send_response(status)
         self.send_header("Content-Type", content_type)
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; frame-ancestors 'none'")
         self.send_header("Content-Length", str(len(payload)))
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
@@ -315,12 +317,14 @@ class _MediaReviewHandler(BaseHTTPRequestHandler):
             self.send_response(416)
             self.send_header("Content-Range", "bytes */%d" % size)
             self.send_header("Content-Length", "0")
+            self.send_header("X-Content-Type-Options", "nosniff")
             self.end_headers()
             return
         start, end = byte_range or (0, size - 1)
         self.send_response(206 if byte_range else 200)
         fallback = "video/mp4" if self.media[index]["kind"] == "video" else "image/jpeg"
         self.send_header("Content-Type", mimetypes.guess_type(path.name)[0] or fallback)
+        self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Accept-Ranges", "bytes")
         self.send_header("Content-Length", str(end - start + 1))
         if byte_range:

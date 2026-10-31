@@ -150,11 +150,10 @@ def load_plan(path: Path) -> tuple[dict[str, Any], dict[str, Any]]:
     if spec and copy:
         return spec, copy
     # Newer plans are intentionally modular and may build SPEC/COPY with
-    # helper calls that the conservative AST reader cannot evaluate. These
-    # are trusted local plans, so execute them only as a compatibility
-    # fallback instead of silently publishing a package named "current".
-    runtime = runpy.run_path(str(path))
-    return runtime.get("SPEC", {}), runtime.get("COPY", {})
+    # helper calls that the conservative AST reader cannot evaluate.
+    # To avoid arbitrary code execution vulnerabilities with untrusted
+    # inputs, we no longer use runpy.run_path as a fallback.
+    return {}, {}
 
 
 def _short_key(short_id: str | int) -> tuple[str, str]:
