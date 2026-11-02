@@ -428,3 +428,73 @@ def task_for_shot(queue: dict[str, Any], shot_id: str) -> dict[str, Any] | None:
         ),
         None,
     )
+
+
+def _selftest() -> None:
+    entities = {
+        "hero_1": {"name": "Arthur", "visual_anchor": "Blonde hair, blue armor"},
+        "villain_1": {"name": "Zorg", "visual_anchor": "Red eyes, dark cloak"}
+    }
+
+    shot1 = {
+        "id": "shot_01",
+        "duration_target": 3.5,
+        "dialogue": [
+            {"speaker_id": "hero_1", "text": "Stop right there!", "performance": "angry shout"}
+        ],
+        "entities": ["hero_1", "villain_1"]
+    }
+
+    dt = _dialogue_text(shot1, entities)
+    assert 'Arthur says exactly "Stop right there!"; delivery: angry shout' in dt, "dialogue_text parsing failed"
+
+    deps, lines = _reference_lines(["hero_1", "villain_1"], entities)
+    assert deps == ["anchor_hero_1", "anchor_villain_1"], "reference dependencies failed"
+    assert len(lines) == 2, "reference lines count failed"
+    assert "reference1" in lines[0], "reference line format failed"
+    assert "hero_1 identity" in lines[0], "reference line entity failed"
+
+    config = {
+        "provider": "TestProvider",
+        "model": "model-1",
+        "aspect": "16:9",
+        "format": "cinematic",
+        "max_retries": 2
+    }
+    scene = {
+        "id": "scene_01",
+        "state_before": "calm forest",
+        "characters": ["hero_1"]
+    }
+    shot = {
+        "id": "shot_01",
+        "duration_target": 3.5,
+        "continuity": "consistent lighting",
+        "frame_intent": "wide shot",
+        "camera": "pan left",
+        "observable_action": "hero confronts villain",
+        "end_state": "villain looks surprised",
+        "audio": "tense music",
+        "negative": "blurry",
+        "entities": ["villain_1"]
+    }
+    prompt, p_deps = _shot_prompt(config, scene, shot, entities)
+    assert "TestProvider" in prompt, "prompt missing provider"
+    assert "3.5s" in prompt, "prompt missing duration"
+    assert "anchor_hero_1" in p_deps, "prompt dependencies missing hero"
+    assert "anchor_villain_1" in p_deps, "prompt dependencies missing villain"
+
+    episode = {"id": "ep_01"}
+    task = _shot_task(config, episode, scene, shot, entities, 1)
+    assert task["id"] == "video_shot_01", "task id generation failed"
+    assert task["depends_on"] == p_deps, "task dependencies mismatch"
+    assert task["payload"]["duration"] == 3.5, "task duration calculation failed"
+
+    print("drama_pipeline.tasks self-test GREEN")
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1 and sys.argv[-1] == "selftest":
+        _selftest()
+        sys.exit(0)
